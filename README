@@ -1,0 +1,10 @@
+MRO PYME es una aplicación escrita en Python para el entorno Google App Engine. La aplicación tiene como funcionalidad organizar información de emergencias y mantenimiento de equipos para un grupo de operadores. Permite registrar la información de intervenciones y recibir la información segmentada.
+
+Se utiliza como interfaz HTML5 con jquerymobile.
+Para generar las plantillas se utiliza Jinja2.
+La aplicación se encuentra publicada bajo el webframework webapp2.
+
+
+Saludos,
+
+Jorge Alvarado.
