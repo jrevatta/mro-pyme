@@ -1,0 +1,71 @@
+application: opwebdemo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+    
+- url: /
+  script: main.app      
+    
+- url: /pagina0
+  script: main.app
+  
+- url: /operaciones(.*)
+  script: main.app
+  
+- url: /reportes(.*)
+  script: main.app
+  
+- url: /informes(.*)
+  script: main.app
+
+- url: /batch
+  script: main.app
+
+- url: /profile
+  script: admin.app
+  
+- url: /profile/menu
+  script: admin.app
+
+- url: /profile/registro
+  script: admin.app
+
+- url: /profile/respuesta
+  script: admin.app
+  
+- url: /profile/roles
+  script: admin.app
+  
+- url: /index.html
+  static_files: site/index.html
+  upload: site/index.html
+   
+- url: /(.*)
+  static_files: site/\1
+  upload: site/.*
+  
+- url: /res
+  static_dir: site/res
+
+- url: /themes
+  static_dir:  site/themes
+  
+- url: /css
+  static_dir:  site/css
+  
+- url: /js
+  static_dir:  site/js
+  
+  
+libraries:
+- name: webapp2
+  version: "2.5.2"
+  
+- name: jinja2
+  version: "2.6"
+
+- name: pycrypto
+  version: "latest"

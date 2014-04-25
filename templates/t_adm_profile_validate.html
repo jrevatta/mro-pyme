@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OP Energetica</title>
+		<link rel="stylesheet" href="{{path}}themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="{{path}}themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="{{path}}css/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="{{path}}js/jquery-1.10.2.min.js"></script>
+		<script src="{{path}}js/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<script>
+<!--ToDO: form validation and send values -->
+</script>
+<body>
+<div data-role="page" id="p5">
+
+	<div data-role = "header" data-theme="a" data-add-back-btn="true">
+    	<!--<a href="pagina1.html" data-icon="back">Regresar</a><h1>Preventivos</h1>-->
+       <h1>Administración {{version}}</h1>
+    </div>
+
+       <div id="uno" class="ui-content">
+    			<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+                    src="{{path}}res/logo-small.jpg" ></img>
+                    <br>
+				<p>{{mensaje}}</p>
+    			</div>
+				<div>
+                            <ul data-role="listview">
+                                <li data-role="list-divider">Registro de Usuarios</li>
+                                    <h5>Datos:</h5>
+                                </li>
+                            </ul>
+                                    <form action="/profile/respuesta" method="post" data-ajax="false">
+                                    <ul data-role="listview" data-inset="true">
+                                    
+                                        <li class="ui-field-contain">
+                                            <label for="lnombre">Nombres {{lnombre}}:</label>
+                                    <input type="text" name="nombres" id="nombres" value="{{vnombres}}" data-clear-btn="true" required>
+                                    </li>
+                                    
+                                    <li class="ui-field-contain">
+                                    <label for="lpaterno">Apellido Paterno {{lpaterno}}:</label>
+                                    <input type="text" name="paterno" id="paterno" value="{{vpaterno}}" data-clear-btn="true" required>
+                                    </li>
+                                    
+                                    <li class="ui-field-contain">
+                                    <label for="lmaterno">Apellido Materno {{lmaterno}}:</label>
+                                    <input type="text" name="materno" id="materno" value="{{vmaterno}}" data-clear-btn="true" required>
+                                    </li>
+                                        
+                                    <li class="ui-field-contain">
+                                    <label for="llogin">Nombre usuario {{lusuario}}:</label>
+                                    <input type="text" name="usuario" id="usuario" value="{{vusuario}}" data-clear-btn="true" required>
+                                    </li>
+				   
+                                       <li class="ui-field-contain">
+                                    <label for="flip">Requiere cambiar contraseña:</label>
+                                    <select name="flip" id="flip" data-role="slider">
+                                        <option value="off"  {{canclave1}}>Si</option>
+                                        <option value="on" {{canclave2}}>No</option>
+                                    </select>
+                                </li>
+
+  				<li class="ui-field-contain">
+                                    <label for="lclave">Contraseña {{lclave}}:</label>
+                                    <input type="password" name="clave" id="clave" value="{{vclave}}" data-clear-btn="true"  autocomplete="off" required>
+                                    </li>
+                                    
+                                    <li class="ui-field-contain">
+                                    <label for="lclave">Repetir Contraseña {{lrclave}}:</label>
+                                    <input type="password" name="re_clave" id="re_clave" value="{{vrclave}}" data-clear-btn="true" autocomplete="off" required>
+                                    </li>
+                                    
+                                    <li class="ui-field-contain">
+                                    <label for="lclave">Email {{lemail}}:</label>
+                                    <input type="email" name="email" id="email" value="{{vemail}}" data-clear-btn="true" autocomplete="off" required>
+                                    </li>
+                                    
+                                <li class="ui-field-contain">
+                                    <label for="select-choice-1" class="select">Rol en el sistema:</label>
+                                    <select name="sel_rol" id="sel_rol">
+                                        <option value="rol02" {{rol2}}>Operador</option>
+                                        <option value="rol03" {{rol3}}>Supervisor</option>
+                                        <option value="rol04" {{rol4}}>Administrador</option>
+                                        <option value="rol01" {{rol1}}>Cliente</option>   
+                                    </select>
+                                </li>
+                                 <li class="ui-body ui-body-b">
+                                    <fieldset class="ui-grid-a">
+                                            <div class="ui-block-a"><button type="button" class="ui-btn ui-corner-all ui-btn-a" value="cancel">Cancelar</button></div>
+                                            <div class="ui-block-b"><button type="submit" class="ui-btn ui-corner-all ui-btn-a" value="submit">Enviar</button></div>
+                                    </fieldset>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>    
+            
+    	</div>
+        
+        
+
+     <div data-role = "footer">
+ 		<h6>{{empresa}} &copy;</h6>
+     </div>
+     
+     
+</div> <!--pages-->
+</body>
+</html>

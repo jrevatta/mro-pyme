@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+		<title>OP Energetica</title>
+
+		
+		<link rel="stylesheet" href="themes/OPEnergetica.min.css" />		
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0.min.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.0.min.js"></script>
+		
+</head>
+
+{% macro input(name, label = '', value='', size=20) -%}
+		<label for = "{{ name }}">{{label}} </label>
+		<input type="text" name = "{{ name }}" value = "{{value}}" size = "{{size}}">
+{%- endmacro %}
+
+{%- macro textarea(name, label, value, col = 40, row = 8) -%}
+		<label for="{{name}}">{{label}}</label>
+                <textarea cols="{{col}}" rows="{{row}}" name="{{name}}" id="{{name}}">{{value}}</textarea>
+{%- endmacro %}
+
+{%- macro select(name, label, values) -%}
+		<label for = "{{name}}" class="select">{{label}}</label>
+		<select name = "{{name}}" id = "{{name}}">
+				{% if values %}
+				{% for value in values %}
+				  <option value ="{{value.name}}">{{value.caption}}</option>
+				{% endfor %}
+				{% endif %}
+		</select>
+{%- endmacro %}
+
+
+{%- macro checkbox (legend, values)-%}
+	<fieldset>
+		<legend>{{legend}}</legend>
+		{% if values %}
+		   {% for value in values %}
+		     <input type = "checkbox" id ="{{value.name}}" value = "{{value.value}}"/>
+		     <label for = "{{value.name}}">{{value.value}}</label>
+		    {% endfor %}
+		{% endif %}
+	</fieldset>
+		
+{%- endmacro %}
+
+{%- macro file (name, label, value)-%}
+    <label for="{name}}">{{label}}</label>
+    <input type ="file" name = "{{name}}" id = "{{name}}" value = "{{value}}"/>
+{%- endmacro %}
+
+<body>
+<div  data-role="page" id="p4">
+<form name = "informe" action = "" method= "post" data-ajax="false">
+
+		<div  data-role = "header" data-theme="a">
+		<h1>Administración {{version}}</h1>
+		</div>
+  
+
+  <div data-role="tabs">
+
+
+		
+		{% for key, value in informe_layout.iteritems() %}
+		  {% if key == 'tabs' %}
+		    <div data-role="navbar">
+		    <ul>
+		    {% for key, value in value.iteritems() %}
+		      <li><a href="#{{value.name}}" data-theme="a" data-ajax="false"> {{value.label}} </a></li>
+		    {% endfor %}
+		    </ul>
+		    </div> <!--navbar-->
+		  {% elif key == 'divs' %}			
+		    {% for key, value in value.iteritems() %}
+		      		<div id="{{value.name}}" class="ui-content">
+				<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+				src="res/logo-small.jpg" ></img>
+				<br>
+				</div>
+		    <ul data-role="listview">
+		        <li data-role="list-divider">{{value.descripcion}}</li>
+		        {% for key, value in value.campos.iteritems() %}
+		         	<li>
+				{% if value.type == 'input' %}
+				{{input(value.name, value.name, value.data, 25)}}
+				{% elif value.type == 'textarea' %}
+				{{textarea(value.name, value.name, value.data, 20, 4)}}
+				{% elif value.type == 'checkbox' %}
+				{{checkbox(value.name, value.data)}}
+				{% elif value.type == 'select' %}
+				{{select(value.name, value.name, value.data )}}
+				{% elif value.type == 'file' %}
+				{{file(value.name, value.name, value.data)}}
+				{% else %}
+				{% endif %}
+				</li>
+		        {% endfor %} 
+
+		    </ul>
+		    </div>
+		    {% endfor %}  
+		  {% else %}
+		  <p>Ha llegado el momento</p>>
+		  {% endif %}
+		
+		 {% endfor %} 
+
+
+
+
+            
+  </div><!--tabs kanban-->
+</form>
+  <div data-role = "footer">
+ 		<h6>{{empresa}} &copy;</h6>
+  </div>
+</div><!--page-->
+
+</body>
+</html>

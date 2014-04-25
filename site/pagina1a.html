@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OP Energetica</title>
+		<link rel="stylesheet" href="themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="p3">
+
+	<div data-role = "header" data-theme="a" data-add-back-btn="true">
+    	<!--<a href="pagina1.html" data-icon="back">Regresar</a><h1>Preventivos</h1>-->
+       <h1>Preventivos</h1>
+    </div>
+	
+    
+    <div data-role="tabs">
+    
+    	<div data-role="navbar">
+        <ul>
+          <li><a href="#uno" data-theme="a" data-ajax="false">Cliente</a></li>
+          <li><a href="#dos" data-theme="a" data-ajax="false">Protocolo</a></li>
+          <li><a href="#tres" data-theme="a" data-ajax="false">Diagnostico</a></li>
+          <li><a href="#cuatro" data-theme="a" data-ajax="false">Inventario</a></li>
+        </ul>
+    	</div>
+        
+      
+        
+    	<div id="uno" class="ui-content">
+				<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+                    src="res/logo-small.jpg" ></img>
+                    <br>
+    			</div>
+
+                <ul data-role="listview">
+                    <li data-role="list-divider">TopiTop S.A.</li>
+                    <li>
+                    <h2>Recomendaciones:</h2>
+                    <p><strong>Validar temperatura de circuito central.</strong></p>
+                    <p>Según la última inspección del mes de Enero, se detectó un posible recalentamiento en uno de los sensores termicos. Se requiere descartar que sea ese el motivo de la alarma.</p>
+                        <p class="ui-li-aside">10/02/2014 6:26 PM</p>
+                    </li>
+                    <li>
+                        <h2>Contacto:</h2>
+                    <p><strong>Centro de Mantenimiento .</strong></p>
+                    <p>Telefono: <a href="tel://992332828">992332828</a> - RPM : <a href="tel://993283834">993283834</a>. Fijo: <a href="tel://013329292">013329292</a> anexo 234</p>
+                       <p>Preguntar por el ingenierio: Antonio Perez. <a href="mailto:aaperez@topitop.pe">aaperez@topitop.pe</a></p> 
+                    </li>
+                    
+                        <li data-icon="location">
+                        <h2>Ubicación:</h2>
+                    <p><strong>Planta Lima Norte.</strong></p>
+                    <a href="https://maps.google.com.pe/maps?q=TopiTop,+El+Santuario,+San+Juan+de+Lurigancho,+Departamento+de+Lima&hl=es-419&sll=-9.19345,-75.00284&sspn=28.305306,45.043945&oq=TopiTop+&t=m&z=17&iwloc=A">
+                    <p>Av. El Santuario. 1333 San Juan de Lurigancho.</p></a>
+                    <p>Referencia: Cerca al metro de San Juan.</p>
+                     
+                    </li>
+                    
+                    
+                  </ul>
+    
+
+      </div>
+            
+    	<div id="dos" class="ui-content">
+        
+		
+				<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+                    src="res/logo-small.jpg" ></img>
+                    <br>
+    			</div>
+
+				<ul data-role="listview">
+    				<li data-role="list-divider">TopiTop S.A.</li>
+    					<h2>Protocolo aplicable:</h2>
+     				</li>
+				</ul>        
+    			<ol data-role="listview">
+    				<li>Solicitar a la empresa horario de mantenimiento</li>
+    				<li>Solicitar documento de permiso de intervención</li>
+    				<li>Validar que el equipo interventor tenga las medidas de seguridad ISO 99311</li>
+    				<li>Desactivar toma central del circuito maestro</li>
+    				<li>Destapar tapa 233 de la caja principal</li>
+                	<li>Revisar circuito 1 y circuito 2.</li>
+                	<li>Cambiar fusibles maestros si aplica.</li>
+                	<li>Validar operatividad de la caja.</li>
+                	<li>Aplicar pruebas de estabilidad.</li>
+                	<li>Solicitar conformidad de equipo técnico de la empresa.</li>
+				</ol>
+    	</div>
+        
+        
+       <div id="tres" class="ui-content">
+    			<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+                    src="res/logo-small.jpg" ></img>
+                    <br>
+    			</div>
+
+				<ul data-role="listview">
+    				<li data-role="list-divider">TopiTop S.A.</li>
+    					<h2>Diagnóstico:</h2>
+     				</li>
+				</ul>
+            <form>
+    		<ul data-role="listview" data-inset="true">
+        		<li class="ui-field-contain">
+            		<label for="name2">Diagnostico:</label>
+            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="textarea2">Descripción:</label>
+        <textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+        </li>
+        <li class="ui-field-contain">
+            <label for="flip2">Requiere reemplazo:</label>
+            <select name="flip2" id="flip2" data-role="slider">
+                <option value="off">Si</option>
+                <option value="on">No</option>
+            </select>
+        </li>
+        <li class="ui-field-contain">
+            <label for="slider2">Deterioro al %:</label>
+            <input type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="select-choice-1" class="select">Seleccionar intervención:</label>
+            <select name="select-choice-1" id="select-choice-1">
+                <option value="standard">De emergencia</option>
+                <option value="rush">Programada</option>
+                <option value="express">Adelantar</option>
+                <option value="overnight">No requiere</option>
+            </select>
+        </li>
+        <li class="ui-body ui-body-b">
+            <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">Cancelar</button></div>
+                    <div class="ui-block-b"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">Enviar</button></div>
+            </fieldset>
+        </li>
+    </ul>
+</form>
+            
+            
+    	</div>
+        
+        
+        
+      	<div id="cuatro" class="ui-content">
+				<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+                    src="res/logo-small.jpg" ></img>
+                    <br>
+    			</div>
+
+				<ul data-role="listview">
+    				<li data-role="list-divider">TopiTop S.A.</li>
+    					<h2>Inventario de equipos de la empresa:</h2>
+     				</li>
+				</ul>        
+    			<ol data-role="listview">
+    				<li>Generador Siemens 322</li>
+    				<li>toma a tierra LX32</li>
+    				<li>Sensor termico marca Daewoo</li>
+    				<li>Caja de control eléctrico XianGan modelo 112</li>
+    				<li>Sistema de enfriamiento Fujitsu 22</li>
+				</ol>
+    	</div>
+        
+        
+</div>
+
+
+     <div data-role = "footer">
+ 		<h6>OP Energética S.A.C</h6>
+     </div>
+     
+     
+</div> 
+   
+   
+</body>
+</html>

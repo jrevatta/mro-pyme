@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OP Energetica</title>
+		<link rel="stylesheet" href="themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<script language="javascript1.4">
+
+function enviar(){
+	document.location.href="pagina0.html";
+}
+</script>
+<body>
+<!-- Inicio primera pagina -->
+<div data-role="page" id="p0">
+	<div data-role = "header" data-theme="a">
+    	<h1>Sistema MRO Mobile 1.0</h1>
+    </div>
+    <div role="main" class="ui-content">
+    <img style="margin-left:auto; margin-right:auto; display:block;" src="res/logo.jpg" ></img>
+    <form action="" method="get">
+    <label for="text-basic"> Ingrese su usuario:</label>
+    <input type="text" name="text-basic" id="usuario" value "">
+    <label for="password">Clave:</label>
+    <input type="password" name "password" id="password" value="" autocomplete="off">
+    <p></p>
+    <input type="submit" class="ui-shadow ui-btn ui-corner-all ui-mini" value="Enviar" onClick="javascript:enviar();">
+    </form> 
+    </div>
+    <div data-role = "footer">
+ 		<h6>OP Energética S.A.C &copy;</h6>
+    </div>
+</div>
+
+</body>
+</html>

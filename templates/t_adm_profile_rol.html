@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OP Energetica</title>
+		<link rel="stylesheet" href="{{path}}themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="{{path}}themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="{{path}}css/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="{{path}}js/jquery-1.10.2.min.js"></script>
+		<script src="{{path}}js/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<script>
+<!--ToDO: form validation and send values -->
+</script>
+<body>
+<div data-role="page" id="p5">
+
+	<div data-role = "header" data-theme="a" data-add-back-btn="true">
+    	  <!--<a href="pagina1.html" data-icon="back">Regresar</a><h1>Preventivos</h1>-->
+          <h1>Administración {{version}}</h1>
+        </div>
+
+		<div id="uno" class="ui-content">
+    			<div>
+      				<img style="margin-left:0px; margin-right:auto; display:block;"
+				src="{{path}}res/logo-small.jpg" ></img>
+				<br>
+				<p>{{mensaje}}</p>
+    			</div>
+				
+				<div>
+		                <ul data-role="listview">
+                                  <li data-role="list-divider">Modificar permisos:</li>
+                                     <h5>Datos:</h5>
+                                  </li>
+
+				  <li>
+                                    <form action="/profile/roles" method="post" data-ajax="false">
+				<ul data-role="listview" data-inset="true">		
+				<div>
+				
+				  <label for="text-basic"> Ingrese su usuario:</label>
+				  <input type="text" name="login_usuario" id="login_usuario" value = "{{usuario}}">
+				  <label for="password">Clave:</label>
+				  <input type="password" name = "login_password" id="login_password" value="" autocomplete="off">						
+						
+				</div>
+				</ul>
+                                    <ul data-role="listview" data-inset="true">
+                                      <fieldset data-role="opciones">
+						<legend>Permisos:</legend>
+						<input type="checkbox" name="ckb1" id="ckb1" {{val1}}>
+						<label for="ckb1">Operaciones</label>
+						
+						<input type="checkbox" name="ckb2" id="ckb2" {{val2}}>
+						<label for="ckb2">Inventario</label>
+						
+						<input type="checkbox" name="ckb3" id="ckb3" {{val3}}>
+						<label for="ckb3">Reportes</label>
+				      </fieldset>
+								                                
+                                      <fieldset class="ui-grid-a">
+                                            <div class="ui-block-a"><button type="button" class="ui-btn ui-corner-all ui-btn-a" value="cancel">Cancelar</button></div>
+                                            <div class="ui-block-b"><button type="submit" class="ui-btn ui-corner-all ui-btn-a" value="submit">Enviar</button></div>
+                                      </fieldset>                           
+				    </form>
+				  </li>  
+		                </ul>
+				</div>
+                        
+                </div>    
+
+</div>
+        
+        
+
+     <div data-role = "footer">
+ 		<h6>{{empresa}} &copy;</h6>
+     </div>
+     
+     
+<!--pages-->
+</body>
+</html>

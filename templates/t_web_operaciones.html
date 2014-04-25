@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{empresa}}</title>
+		<link rel="stylesheet" href="{{path}}themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="{{path}}themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="{{path}}css/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="{{path}}js/jquery-1.10.2.min.js"></script>
+		<script src="{{path}}js/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<body>
+  <div data-role="page" id="p4">
+		<div data-role = "header" data-theme="a">
+			<h1>Operaciones</h1>
+		</div>
+    <div role="main" class="ui-content">
+		<img style="margin-left:0px; margin-right:auto; display:block;" src="{{path}}res/logo-small.jpg" ></img>
+		<br></br>
+		<label for="search-2">Buscar orden:</label>
+		<input type="search" name="search-2" id="search-2" value ="">
+   
+		{% if operaciones %}
+		<ul data-role="listview"  data-inset="true">
+		<li data-role="list-divider">{{ope_fecha}} <span class="ui-li-count">3</span></li>
+		    {% for operacion in operaciones %}
+		    <li><a href="{{operacion.url}}">
+		    <h2>{{operacion.cliente}}</h2>
+		    <p><strong>{{operacion.titulo}}</strong></p>
+		    <p>{{operacion.descripcion}}</p>
+		    <p class="ui-li-aside">Planificado para ejecutarse: {{operacion.fecha}}</p></a></li>
+		    {% endfor %}
+		</ul>
+		{% endif %}
+     </div>
+   </div>
+
+<div data-role = "footer">
+ 		<h6>OP Energética S.A.C</h6>
+</div>
+ 
+</body>
+</html>

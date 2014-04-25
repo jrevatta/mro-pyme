@@ -1,0 +1,59 @@
+Definiciones del prototipo funcional en GAE.
+
+1. Entidades.
+
+Usuario(id_u, nombre, app_paterno, app_materno, email, cargo, id_ui, tipo_usuario)
+Usuario_Identidad(id_ui, clave1, clave2, pregunta1, respuesta1, pregunta2, respuesta2, pregunta3, respuesta3, fecha)
+Usuario_Permisos(id_up, id_recurso)
+Recursos(id_r, url)
+Cliente(id_c, razon_social, ruc, direccion1, direccion2, url_mapa, telefono1, telefono2, fecha)
+Cliente_Contacto(id_cc, nombre, app_paterno, app_materno, email, cargo, telefono1, telefono2, telefono3, referencia)
+Tipo_Intervencion(id_ti, tipo, descripcion)
+Intervencion(id_i, id_tipo, fecha_recepcion, fecha_inicio, fecha_fin, tiempo_planificado, persona_crea, persona_asignada, estado)
+Informes_Definicion(id_id, version, campos, reglas_campos, estado)
+Intervencion_Informes_Cliente(id_iic, id_id, data_campos, fecha_envio, id_u, estado, version, fecha_modificacion)
+Intervencion_Informe_Cliente_Data(id_iicd, id_iic, descripcion, data, data_metatag, data_url)
+Cliente_Intervencion_Protocolo(id_cip, id_iic, lista_protocolo)
+Cliente_Intervencion_Pre_Requisitos(id_cipr, id_iic, lista_requisitos)
+Cliente_Intervencion_Post_Actividaddes(id_cipa, id_iic, lista_actividades)
+Cliente_Inventario(id_ci, nombre, caracteristicas, fabricante, estado, proveedor)
+Empresa_Insumos_Inventario(id_eii, nombre, caracteriscticas, fabricante, stock)
+
+
+2. Procesos de la aplicaci—n.
+
+2.1 Login: Solicitar usuario y clave, revisar si esta autorizado, si esta registrado en la BD. Es decir registrado en el administrador.
+            Una vez validado que se encuentra obtener su listado de permisos en la aplicaci—n. Un array con la lista de url que tendr‡ acceso.
+            Esta informaci—n se almacena en su sesi—n.
+            Respuesta: token de sesi—n. (hecho en forma b‡sica, sin sesion)
+
+2.2 Menœ principal: Menœ de la aplicaci—n. Cada opci—n enviada debe tener el token del login. Es lo que identifica la sesi—n activa.
+
+2.2.1 Planificadas: Actividades divididas en Preventivos, Mantenimientos, Emergencia. Han sido asignadas por una unidad central para las actividades
+            de cada operador o ingeniero de campo. Estas actividades tienen instrucciones y datos para su ejecuci—n.
+
+2.2.1.1 Preventivos: Lista de actividades de revisi—n preventiva que busca identificar algœn problema o falla en la operaci—n
+        de los equipos que la empresa mantiene con los clientes.
+        
+        
+2.2.1.2 Mantenimiento: Actividades de mantenimiento que pueden derivarse desde un Preventivo o una Emergencia o simplemente
+        encontrarse planificada por un contrato de mantenimiento por tiempo de operaci—n del equipo. Es decir el equipo
+        puede funcionar en optimas condiciones pero por tiempo de vigencia de los instrumentos ya requiere su mantenimiento.
+
+2.2.1.3 Emergencia: Actividades derivadas de alguna alerta o aviso por parte de sensores o personal de la empresa.
+
+3. Procesos de Administraci—n de la APP
+
+3.1 Login: Login de usuarios administrador. Repetir el mismo esquema de autenticaci—n y sesi—n. (hecho en forma b‡sica)
+
+3.2 Reportes: Permite consultar reportes de informaci—n cruzada para tomar decisiones.
+
+3.3 Mantener data: Permite dar mantenimiento a data especifica como el inventario. (Hecho en forma b‡sica)
+
+
+Para segunda version:
+
+Perfiles
+Firmas Digitales
+Permisos
+

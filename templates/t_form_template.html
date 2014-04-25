@@ -1,0 +1,39 @@
+{% macro input(name, label = '', value='', size=20) -%}
+		<label for = "{{ name }}">{{label}} </label>
+		<input type="text" name = "{{ name }}" value = "{{value|e}}" size = "{{size}}">
+{%- endmacro %}
+
+{%-  macro textarea(name, label, value, col = 40, row = 8) -%}
+		<label for="{{name}}">{{label}}</label>
+                <textarea cols="{{col}}" rows="{{row}}" name="{{name}}" id="{{name}}">{{value}}</textarea>
+{%-  endmacro %}
+
+{%-  macro  select(name, label, values) -%}
+		<label for = "{{name}}" class="select">{{label}}</label>
+		<select name = "{{name}}" id = "{{name}}">
+				{% if values %}
+				{% for value in values %}
+				  <option value ="{{value.name}}">{{value.caption}}</option>
+				{% endfor %}
+				{% endif %}
+		</select>
+{%- endmacro %}
+
+
+{%- macro checkbox (legend, values)-%}
+	<fieldset>
+		<legend>{{legend}}</legend>
+		{% if values %}
+		   {% for value in values %}
+		     <input type = "checkbox" id ="{{value.name}}" value = "{{value.value}}"/>
+		     <label for = "{{value.name}}">{{value.value}}</label>
+		    {% endfor %}
+		{% endif %}
+	</fieldset>
+		
+{%- endmacro %}
+
+{%- macro file (name, label, value)-%}
+    <label for="{name}}">{{label}}</label>
+    <input type ="file" name = "{{name}}" id = "{{name}}" value = "{{value}}"/>
+{%- endmacro %}

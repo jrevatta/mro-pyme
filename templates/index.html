@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OP Energetica</title>
+		<link rel="stylesheet" href="themes/OPEnergetica.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery.mobile-1.4.0.min.js"></script>
+</head>
+
+<body>
+<!-- Inicio primera pagina -->
+<div data-role="page" id="p0">
+	<div data-role = "header" data-theme="a">
+    	<h1>Sistema MRO Mobile {{version}}</h1>
+    </div>
+    <div role="main" class="ui-content">
+    <img style="margin-left:auto; margin-right:auto; display:block;" src="res/logo.jpg" ></img>
+    <p>{{mensaje}}</p>
+    <form action="/pagina0" method="post" data-ajax="false">
+    <label for="text-basic"> Ingrese su usuario:</label>
+    <input type="text" name="usuario" id="usuario" value = "">
+    <label for="password">Clave:</label>
+    <input type="password" name = "password" id="password" value="" autocomplete="off">
+    <p></p>
+    <input type="submit" class="ui-shadow ui-btn ui-corner-all ui-mini" value="Enviar">
+    </form> 
+    </div>
+    <div data-role = "footer">
+ 		<h6>{{empresa}} &copy;</h6>
+    </div>
+</div>
+
+</body>
+</html>
